@@ -1,9 +1,20 @@
 import React from 'react';
 import './App.css';
+import PlanetList from './components/PlanetList';
+import PlanetProvider from './context/PlanetProvider';
 
 function App() {
   return (
-    <span>Hello,App!</span>
+    <PlanetProvider>
+      <main>
+        <header>
+          <PlanetList />
+        </header>
+        <section>
+          <div />
+        </section>
+      </main>
+    </PlanetProvider>
   );
 }
 
