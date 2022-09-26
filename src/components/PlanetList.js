@@ -6,33 +6,31 @@ import '../styles/filter.css';
 function PlanetList() {
   const { planets } = useContext(PlanetContext);
   const { filterName, selectedFilters } = useContext(FilterContext);
-  console.log(selectedFilters);
 
-  const filterPlanetName = planets
+  const filterByValue = (rowColumn) => {
+    const arrayFilter = [];
+    selectedFilters.forEach((filter) => {
+      switch (filter.comparison) {
+      case 'maior que':
+        arrayFilter.push(Number(rowColumn[filter.column]) > Number(filter.value));
+        break;
+      case 'menor que':
+        arrayFilter.push(Number(rowColumn[filter.column]) < Number(filter.value));
+        break;
+      case 'igual a':
+        arrayFilter.push(rowColumn[filter.column] === filter.value.toUpperCase());
+        break;
+      default:
+        return true;
+      }
+    });
+    return arrayFilter.every((elements) => elements);
+  };
+
+  const filtersPlanet = planets
     .filter((planetName) => planetName.name
-      .toLowerCase().includes(filterName.toLowerCase()));
-
-  // const tratarDados = (linha) => {
-  //   // console.info('Linha: ', linha);
-  //   const bools = [];
-  //   selectedFilters.forEach((filter) => {
-  //     switch (filter.condition) {
-  //     case 'menor que':
-  //       bools.push(Number(linha[filter.column]) >= Number(filter.value));
-  //       break;
-  //     case 'maior que':
-  //       bools.push(Number(linha[filter.column]) <= Number(filter.value));
-  //       break;
-  //     case 'igual a':
-  //       bools.push(linha[filter.column] === filter.value.toUpperCase());
-  //       break;
-  //     default:
-  //       return true;
-  //     }
-  //   });
-
-  //   return bools.every((el) => el);
-  // };
+      .toLowerCase().includes(filterName.toLowerCase()))
+    .filter(filterByValue);
 
   return (
     <table role="table">
@@ -54,7 +52,7 @@ function PlanetList() {
         </tr>
       </thead>
       <tbody>
-        {filterPlanetName.map(({
+        {filtersPlanet.map(({
           name,
           rotation_period: rotationPeriod,
           orbital_period: orbitalPeriod,

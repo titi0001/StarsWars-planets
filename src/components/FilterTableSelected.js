@@ -44,7 +44,7 @@ function FilterTableSelected() {
         <input
           data-testid="value-filter"
           placeholder="Digite o valor"
-          type="text"
+          type="number"
           id="valueFilter"
           name="valueFilter"
           value={ selected.value }

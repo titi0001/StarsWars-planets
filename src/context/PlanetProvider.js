@@ -14,6 +14,7 @@ function PlanetProvider({ children }) {
     };
     getListPlanets();
   }, []);
+
   const contextValue = { planets };
 
   return (
