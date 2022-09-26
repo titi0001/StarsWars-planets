@@ -69,6 +69,17 @@ function FilterTableSelected() {
         >
           FILTRAR
         </button>
+        {selectedFilters.map((filter, index) => (
+          <div className="selectedFilters" key={ index }>
+            <span>
+              {filter.column}
+              {' '}
+              {filter.condition}
+              {' '}
+              {filter.value}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
