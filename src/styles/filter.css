@@ -1,0 +1,63 @@
+:root {
+
+  --white: white;
+
+  --gray: #f6f6f6;
+
+  --green: #3bba9c;
+
+  --dark: #2e3047;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+thead {
+  background-color: var(--dark);
+  color: white;
+  font-size: 0.875rem;
+  letter-spacing: 2%;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+td {
+  letter-spacing: 1px;
+  padding: 8px;
+}
+
+tbody td:first-child {
+  text-align: left;
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tbody tr:nth-child( odd ) {
+  background-color: var(--gray);
+}
+
+tbody tr:nth-child( even ) {
+  background-color: white;
+}
+
+thead tr th:first-child, tbody tr td:first-child {
+  min-width: 8em;
+  width: 20em;
+}
+
+tbody tr:hover {
+  background-color: var(--green) !;
+}
+
+.filter-city input {
+  margin-bottom: 12px;
+  width: 100%;
+}
+

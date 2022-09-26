@@ -5,21 +5,16 @@ import getPlanets from '../services';
 
 function PlanetProvider({ children }) {
   const [planets, setPlanets] = useState([]);
-  const [error, setError] = useState('');
 
   useEffect(() => {
     const getListPlanets = async () => {
-      try {
-        const { results } = await getPlanets();
-        setPlanets(results);
-      } catch (e) {
-        setError(e.message);
-      }
+      const { results } = await getPlanets();
+      const resultsFilters = results.filter((info) => delete info.residents);
+      setPlanets(resultsFilters);
     };
     getListPlanets();
   }, []);
-  const contextValue = { planets, error,
-  };
+  const contextValue = { planets };
 
   return (
     <PlanetContext.Provider value={ contextValue }>
