@@ -12,9 +12,6 @@ function FilterTableSelected() {
     setSelectedFilters,
   } = useContext(FilterContext);
 
-  const removeColumn = (columns) => !columnFilter
-    .find((filtro) => columns === filtro.column);
-
   return (
 
     <div>
@@ -39,7 +36,7 @@ function FilterTableSelected() {
         }
       >
         {
-          comparison.filter(removeColumn).map((element) => (
+          comparison.map((element) => (
             <option key={ element }>{ element }</option>
           ))
         }
