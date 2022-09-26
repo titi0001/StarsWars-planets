@@ -6,10 +6,14 @@ function FilterTableSelected() {
     selected,
     setSelected,
     columnFilter,
+    setColumnFilter,
     comparison,
     selectedFilters,
     setSelectedFilters,
   } = useContext(FilterContext);
+
+  const removeColumn = (columns) => !columnFilter
+    .find((filtro) => columns === filtro.column);
 
   return (
 
@@ -35,7 +39,7 @@ function FilterTableSelected() {
         }
       >
         {
-          comparison.map((element) => (
+          comparison.filter(removeColumn).map((element) => (
             <option key={ element }>{ element }</option>
           ))
         }
@@ -59,6 +63,8 @@ function FilterTableSelected() {
           className="add"
           data-testid="button-filter"
           onClick={ () => {
+            setColumnFilter(columnFilter
+              .filter((option) => option !== selected.column));
             setSelectedFilters([...selectedFilters, selected]);
             setSelected({
               column: 'population',
@@ -70,7 +76,21 @@ function FilterTableSelected() {
           FILTRAR
         </button>
         {selectedFilters.map((filter, index) => (
-          <div className="selectedFilters" key={ index }>
+          <div
+            data-testid="filter"
+            className="selectedFilters"
+            key={ index }
+          >
+            <button
+              type="button"
+              onClick={ () => {
+                const cloneArray = [...selectedFilters];
+                cloneArray.splice(index, 1);
+                setSelectedFilters(cloneArray);
+              } }
+            >
+              𝙭
+            </button>
             <span>
               {filter.column}
               {' '}
@@ -80,6 +100,21 @@ function FilterTableSelected() {
             </span>
           </div>
         ))}
+        <button
+          data-testid="button-remove-filters"
+          type="button"
+          className="clear"
+          onClick={ () => {
+            setSelectedFilters([]);
+            setSelected({
+              column: '',
+              condition: '',
+              value: '',
+            });
+          } }
+        >
+          LIMPAR
+        </button>
       </div>
     </div>
   );
