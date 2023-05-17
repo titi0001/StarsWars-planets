@@ -27,10 +27,7 @@ function PlanetList() {
     return arrayFilter.every((elements) => elements);
   };
 
-  const filtersPlanet = planets
-    .filter((planetName) => planetName.name
-      .toLowerCase().includes(filterName.toLowerCase()))
-    .filter(filterByValue);
+  const filtersPlanet = planets.filter((planetName) => planetName.name.toLowerCase().includes(filterName.toLowerCase())).filter(filterByValue);
 
   return (
     <table role="table">
