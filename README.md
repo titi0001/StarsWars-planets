@@ -1,68 +1,68 @@
-# Descrição
+# Description
 
-Este projeto foi desenvolvido durante o período de Curso Front-End da Trybe 🚀 
+This project was developed during Trybe's Front-End Course period 🚀
 
-O projeto tem por objetivo a avaliação e prática dos conhecimentos adquiridos na Trybe, visando o cumprimento do requisitos solicitados pela mesma.
+The aim of the project is to evaluate and practice the knowledge acquired at Trybe, in order to meet the requirements requested by it.
 
-### *ATENÇÃO: Para utilizar a aplicação acesse o link no canto direito em "About"*.
+### *ATTENTION: To use the application, access the link in the right corner under "About"*.
 
 ![img](projectIntro.gif)
 
 ---
 
-# Sumário
+# Summary
 
-- [Descrição](#descrição)
-- [Habilidades](#habilidades-requeridas)
-- [O que foi desenvolvido](#o-que-foi-desenvolvido)
-- [Tecnologias usadas](#tecnologias-usadas)
-- [ANTES DE INICIALIZAR A APLICAÇÃO](#antes-de-inicializar-a-aplicação)
+- [Description](#description)
+- [Skills](#skills-required)
+- [What Was Developed](#What Was Developed)
+- [Used technologies](#used-technologies)
+- [BEFORE LAUNCHING THE APPLICATION](#before-launching-the-application)
 - [Linter](#linter)
 
 
 ---
 
-## Habilidades requeridas
+## Skills Required
 
-* Utilizar a _Context API_ do **React** para gerenciar estado.
-* Utilizar o _React Hook useState_;
-* Utilizar o _React Hook useContext_;
-* Utilizar o _React Hook useEffect_;
-* Criar _React Hooks_ customizados.
-
----
-
-## O que foi desenvolvido
-
-Foi implementado uma lista com filtros de planetas do universo de Star Wars usando **Context API e Hooks**, do React, para controlar os estados globais.
+* Use **React**'s _Context API_ to manage state.
+* Use the _React Hook useState_;
+* Use the _React Hook useContext_;
+* Use the _React Hook useEffect_;
+* Create custom _React Hooks_.
 
 ---
 
-## Tecnologias usadas
+## What was developed
 
-- `javascript` , `jsx` , `React` , `ContextAPI` e `css`.
+A filter list of planets from the Star Wars universe was implemented using **Context API and Hooks**, from React, to control global states.
 
 ---
 
-## ANTES DE INICIALIZAR A APLICAÇÃO
+## Technologies used
 
-1. Clone o repositório
-  * `git clone git@github.com:THIAGOMARTINS367/Trybe-project-starwars-planets-search.git`
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd Trybe-project-starwars-planets-search`
+- `javascript` , `jsx` , `React` , `ContextAPI` and `css`.
 
-2. Instale as dependências e inicialize o projeto
-  * Instale as dependências:
-    * `npm install`
-  * Inicialize o projeto:
-    * `npm start` (uma nova página deve abrir no seu navegador com a lista de planetas)
-    * ⚠️ Lembrando que já deve se estar dentro da pasta do projeto `Trybe-project-starwars-planets-search`
+---
+
+## BEFORE INITIALIZING THE APPLICATION
+
+1. Clone the repository
+   * `git clone git@github.com:THIAGOMARTINS367/Trybe-project-starwars-planets-search.git`
+   * Enter the repository folder you just cloned:
+     * `cd Trybe-project-starwars-planets-search`
+
+2. Install dependencies and initialize the project
+   * Install the dependencies:
+     * `npm install`
+   * Initialize the project:
+     * `npm start` (a new page should open in your browser with the list of planets)
+     * ⚠️ Remembering that you should already be inside the `Trybe-project-starwars-planets-search` project folder
 
 ---
 
 ## Linter
 
-Para garantir a qualidade do código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento foi utilizado neste projeto o linter `ESLint` e o `Stylelint`. Para rodar o linter localmente, execute o comando abaixo:
+To ensure the quality of the code in order to make it more readable, easier to maintain and following good development practices, the linter `ESLint` and `Sylelint` were used in this project. To run the linter locally, run the command below:
 
 ```bash
 npm run lint
